@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>AutoMom</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags unless you know what you are doing -->
@@ -12,14 +12,213 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body class="container-fluid">
-      <h1>Example</h1>
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-      ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.</p>
+    <div class = "container">
+      <div class="jumbotron">
+       <h1>Gesso</h1>
+       <div class ="well">
+      <div id ="usermessages">
+   </div>
+       </div>
+     </div>
+   </div>
+   <!-- <div class ="well">
+     <div id ="usermessages">
+   </div> -->
+ </div>
+
+   <div class="container">
+   <div class="row">
+     <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+       <div id="sign-up-wrapper">
+       <div class="thumbnail">
+         <div class="caption">
+           <div class="sign-up-box">
+           <form id="sign-up">
+               <fieldset>
+                 <h2>Sign up</h2>
+                 <input type="text" name="credentials[email]" value="" placeholder="email">
+                 <input type="password" name="credentials[password]" value="" placeholder="password">
+                 <input type="password" name="credentials[password_confirmation]" value="" placeholder ="password confirmation">
+                 <input type="submit" name="submit" value="Sign up">
+               </fieldset>
+           </form>
+         </div>
+         </div>
+         </div>
+     </div>
+   </div>
+
+     <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+       <div id="sign-in-wrapper">
+       <div class="thumbnail">
+         <div class="caption">
+           <div class="sign-in-box">
+           <form id="sign-in">
+               <fieldset>
+                   <h2>Sign in</h2>
+                   <input type="text" name="credentials[email]" value="" placeholder="email">
+                   <input type="password" name="credentials[password]" value="" placeholder="password">
+                   <input type="submit" name="submit" value="Sign in">
+                 </fieldset>
+           </form>
+</div>
+         </div>
+       </div>
+     </div>
+     </div>
+
+     <div id ="sign-out-wrapper" class="hidden">
+     <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+       <div class="thumbnail">
+
+         <div class="caption">
+           <div class="sign-out-box">
+           <h2>Sign out</h2>
+           <form id="sign-out">
+                   <input type="submit" name="submit" value="Sign Out">
+           </form>
+         </div>
+         </div>
+       </div>
+     </div>
+   </div>
+   </div>
+
+
+
+<div class="container">
+  <div class="row article">
+  <div class="col-lg-12 col-md-12 col-sm-12col-xs-12">
+    <div id="show-chores-wrapper" class="hidden">
+<div class="show-all-chores-box">
+      <h2>Show all chores</h2>
+        <form id="show-chore">
+          <fieldset>
+          <div id="show-chore-button">
+            <input type ="submit" name="submit" value="Show all chores">
+          </div>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+        <br><br><br>
+
+<!-- Using AJAX to return list of chores in the 'list' div -->
+<!-- This returns the list of chores. chore-list.handlebars targets the "chore-list" div. -->
+ <div id ="chore-container">
+   <div id="chore-list">
+   </div>
+</div>
+
+         </div>
+       </div>
+     </div>
+
+<div id ="chore-crud" class ="hidden">
+     <div class="container">
+     <div class="row">
+       <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+         <div class="thumbnail">
+           <div class="caption">
+             <div class="create-chore-box">
+           <h2> Create a chore</h2>
+           <form id="create-chore">
+             <fieldset>
+          <input type="text" name="chore[chore_name]" id="chore_name" placeholder="Chore name"><br>
+          <textarea cols="25" rows="7" name="chore[directions]" id="directions" placeholder="Write directions here"></textarea><br>
+          <input type="text" name="chore[day_of_week]" id="day_of_week" placeholder="Day of week"><br>
+          <!-- <input type="text" name="chore[user_id]" id="user_id" placeholder="User ID"><br> -->
+          <input type ="submit" name="submit" value="Create chore">
+        </fieldset>
+      </form>
+    </div>
+
+    </div>
+  </div>
+</div>
+
+<br><br>
+
+
+<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+  <div class="thumbnail">
+    <div class="caption">
+      <div class="delete-chore-box">
+  <h2>Delete a Chore</h2>
+  <form id="delete-chore">
+    <fieldset>
+    <input type="text" name="chore[id]" id="id" placeholder="Chore ID"><br>
+      <input type="submit" value="Delete chore">
+    </fieldset>
+  </form>
+</div>
+</div>
+</div>
+</div>
+
+<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+  <div class="thumbnail">
+    <div class="caption">
+      <div class="update-chore-box">
+  <h2> Update a chore</h2>
+  <form id="update-chore">
+    <fieldset>
+ <input type="text" name="chore[id]" id="id" placeholder="Chore ID"><br>
+ <input type="text" name="chore[chore_name]" id="chore_name" placeholder="Chore name"><br>
+ <textarea cols="25" rows="7" name="chore[directions]" id="directions" placeholder="Write directions here"></textarea><br>
+ <input type="text" name="chore[day_of_week]" id="day_of_week" placeholder="Day of week"><br>
+<!-- <input type="text" name="chore[user_id]" id="user_id" placeholder="User ID"><br> -->
+ <input type ="submit" name="submit" value="Update chore">
+</fieldset>
+</form>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+
+      <BR><BR><BR><BR>
+
+
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <!-- <div class="thumbnail"> -->
+            <!-- <div class="caption"> -->
+              <div class="well">
+
+        <h2>Change Password</h2>
+  <form id="change-password">
+   <fieldset>
+     <input type="password" name="passwords[old]" id="change-password-old" placeholder="Old Password">
+     <input type="password" name="passwords[new]" id="change-password-new" placeholder="New Password">
+     <input type="submit" name="submit" value="Change Password!">
+   </fieldset>
+ </form>
+</div>
+</div>
+</div>
+</div>
+
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+  <!-- <div class="thumbnail"> -->
+    <!-- <div class="caption"> -->
+      <div class="well">
+
+<h2>About</h2>
+Made with &#127752; by Lisa Williams.
+See the code for the front end of the AutoMom app <a href ="https://github.com/lisawilliams/auto-mom-front/">here</a>
+See the code for the back end of the AutoMom app <a href ="https://github.com/lisawilliams/auto-mom-back/">here</a>
+</div>
+</div>
+
+
+
+
+          </div>
+
+
+
     </body>
 </html>
