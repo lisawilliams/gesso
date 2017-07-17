@@ -1,105 +1,132 @@
-## Bucket List
+# Gesso
 
-Bucket list is a single-page application that allows users to track goals they would
-like to achieve and experiences they would like to have in their lifetime.
+Gesso is an art listings app that allows art enthusiasts to keep track of
+local gallery openings so they can support their local galleries and artists.
+
+
+## Link to Live, Deployed Gesso app
+
+[Gesso Deployed App](https://lisawilliams.github.io/gesso/)
+
+## Link to Front And Back End Repositories
+
+[Gesso Front End](https://github.com/lisawilliams/gesso)
+
+[Gesso Back End](https://github.com/lisawilliams/gesso-api)
+
+## What Gesso Does And How It Works
+
+Gesso is a client-server application with a Javascript front end and a Rails
+backend. The front end communicates with the server via an API.
 
 ## Technologies Used
 
-Bucket List is basically a MEAN (Mongo, Express, Angular, NodeJS) without the 'A' -- Angular.
+Gesso's front end is a Javascript application making use of Bootstrap for UI styling.
 
-The backend database is MongoDB, and the API server is a Node/Express application
+The backend database is Postgres, and the API server is a Rails application
 that enables CRUD and authorization functions.
 
-In addition to that stack, we used the [DataTables jQuery plugin](http://datatables.net).
 
 The backend server is hosted on Heroku, and the front end is hosted on Github Pages.
 See below for links to deployed front and back end servers as well as
 links to front and back end repositories.
 
-## Approach
+## The Gesso Front End (Client)
 
-### Approach to implementing CRUD and UI functions for bucket list items
+The front end is written in Javascript and makes use of jQuery, AJAX,
+Bootstrap, and Handlebars.js.
 
-We used the DataTables, a jQuery plugin that helps developers display and update
-table data. We chose it because it is widely used enough to be stable and well-supported,
-and it built-in extra features we would not have had time to implement, such as search
-and sort.
+Handlebars.js is used to manage the display of chores to users, and Bootstrap
+is used to both nicely tile these across the page -- or organize them into one
+neat column for use on mobile devices. AutoMom communicates with a server
+via an API, making requests to get, post, update, or delete chores. The front end
+also makes request to the server for auth functions (sign up, sign in,
+sign out, change password). It is a fully functional CRUD application.
 
-DataTables also has its own API. Because of this, we did not have a completely
-traditional approach to building a model/route/controller set to handle crud functions.
-For some of these functions, we were using the DataTables API to both get and set
-data a user sees when they log in.
+## The Gesso Back End (Server)
 
-We briefly considered having DataTables emit all of a user's bucket list items for
-each request and storing it as one big blob in Mongo, but ultimately we took a row-by-row
-approach where each bucket list item has an individual database record.
+The AutoMom back end is a Rails application which supports RESTful requests
+from the AutoMom client.
 
-### Development/Team Approach
+### Databases and Tables
 
-We held daily standups in the morning to coordinate and divide tasks. To cut down
-on the chances of merge conflicts, we created long issue queues for the front and back
-end repositories. Each new feature branch was named after its issue, for example: issue#11.
-Referencing the issue in our commits and pull requests gave us a clear sense of which
-commits applied to which desired features and bugfixes. As an example,
-look at the following issue, a [bugfix for the UI](https://github.com/squad-three/squad-three-front-end/issues/51)
-The issue clearly shows commits in progress towards solving the problem and
-documents the merge of the feature branch into development.
+The backend uses a Postgres database to store user information. In communicating
+with the database, I did not set up tables or joins directly; I used the Rails ORM to do that.
 
-We used Slack extensively to communicate in the evenings when we weren't physically together.
-We might have been Slacking each other at 1AM a few times, but no team members will
-confirm or deny this.
+There are three active tables, users, galleries, and shows.
 
-## Challenges
+The `user` has id and email, and also stores the token, password hash, and timestamps
+for when a user record was created and updated.
 
-Libraries giveth, and libraries take away. While DataTables significantly sped up the
-creation of our UI, we spent too much time struggling with an add-on to the library
-which would have allowed in-row editing of bucket list items.
+### ADD TABLE DESCRIPTIONS FOR GALLERIES AND SHOWS
 
-Once we abandoned that approach, we took a more traditional approach, popping up a form
-to allow users to create and edit bucket list items.
+### Entity Relationship Diagram
+
+Users ----|----< Shows
+Galleries ---|--- Shows
+
+A user has many shows; galleries also have many shows.
+
+For additional information about the database, visit the project wiki.
+
+## Approach to building Gesso
+
+I used an issue-driven development process for Gesso that I developed along
+with my team for the GA Team project. We outlined features by posting
+issues to the issue queues of the front and back end repositories.
+Feature branches used a naming convention that tied them to individual issues;
+an issue, for example, like "Create login modal" that is issue # 20, would
+have a branch named issue#20. Commit messages and pull requests would also reference
+issue numbers. Upon completion, a feature branch would be merged into development,
+and the branch would be deleted. The development branch would be merged into master
+prior to public deployment. I tried to deploy at the end of each day as a way
+to encourage myself to keep the code in good shape.
+
+I started with Auth as those functions are largely built in the Rails API template
+provided by GA. I used the front-end auth code that I had working from Tic-Tac-Toe,
+which communicated with a back-end Rails app based on the same API. I was able to get Auth
+functions working fairly easily.
+
+I then moved on to the CRUD functions. Here, the backend was not already built for us,
+so I used `rails generate` to generate resources, and ran through a procedure that I
+followed for each resource I built. Here's an example:
+
+### Chores
+
+1. Scaffold chore resource *DONE*
+2. Run bin/rails db:migrate *DONE*
+3. Test that you can add a chore via rails console *DONE*
+4. Test that you can add a chore via a curl request *DONE*
+5. Test that you can return all of a user's chores via a curl request *DONE*
+6. Test that you can update a chore via a curl request *DONE*
+7. Test that you can delete a chore via a curl request *DONE*
+
+(To see my complete project checklist, see [AutoMom Project Checklist](https://github.com/lisawilliams/auto-mom-front/blob/master/checklist.md))
+
+## Issues I Encountered
+
+
+## Gesso Documentation: Gesso Wiki
+
+I created [a wiki](MAKE LINK) documenting our API, checklists, and more. We would like to call out the following specific planning documents and documentation:
+
+## API Documentation
+
+[Link to API Documentation](MAKE LINK)
+
+
+## User Stories
+
+Link to user stories in project wiki
+
+## Wireframes
+
+Link to wireframes in project wiki
 
 ## Instructions for installing dependencies:
 
 Clone this repository and run `npm install`.
-Install DataTables and its default styles at the command line:
-
-```
-npm install datatables.net    # Core library
-npm install datatables.net-dt # Styling
-
-```
-
-## Bucket List Documentation: Bucket List Wiki
-
-We have [an extensive wiki](https://github.com/squad-three/squad-three-back-end) documenting our approach to authorization, our API, checklists, and more. We would like to call out the following specific
-planning documents and documentation:
-
-## API Documentation
-
-[Link to API Documentation](https://github.com/squad-three/squad-three-back-end/wiki/api-intro)
-
-## User Stories
-
-[Link to User Stories](https://github.com/squad-three/squad-three-back-end/wiki/User-Stories)
-
-## Entity Relationship Diagram
-
-[Link to Entity Relationship Diagram (ERD)](https://github.com/squad-three/squad-three-back-end/wiki/ERD)
-
-## Wireframes
-
-[Link to our wireframes](https://github.com/squad-three/squad-three-back-end/wiki/Wireframes)
-
-## Links to Deployed Front and Back End
-
-[A link to the deployed front-end app](https://squad-three.github.io/squad-three-front-end/)
-[A link to the repo for your back-end](https://enigmatic-beyond-36967.herokuapp.com/)
-
-## Links to Front And Back End Repositories
-
-[A link to the front end repository](https://github.com/squad-three/squad-three-front-end)
-[A link to the back end repository](https://github.com/squad-three/squad-three-back-end)
 
 ## Team
 
-Bucket List was built by Alex Constantine, Eric Scace, and Lisa Williams as a team project undertaken during WDI18 at General Assembly Boston.
+Gesso was built by Lisa Williams as a team project undertaken during WDI18 at General Assembly Boston.
