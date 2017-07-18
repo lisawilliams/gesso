@@ -39,10 +39,10 @@ const onAddUserFailure = (response) => {
 const onSignInSuccess = (response) => {
   store.user = response.user
   resetForm($('#sign-in'))
-  $('#chore-crud').removeClass('hidden')
-  $('#show-chores-wrapper').removeClass('hidden')
+  $('#show-crud').removeClass('hidden')
+  $('#show-listing-wrapper').removeClass('hidden')
   $('#sign-out-wrapper').removeClass('hidden')
-  $('#sign-up-wrapper').addClass('hidden')
+  $('#regContainer').addClass('hidden')
   $('#sign-in-wrapper').addClass('hidden')
   $('#usermessages').text('You are signed in. Get ready to have organized chores!')
 }
@@ -66,7 +66,7 @@ const signOutSuccess = () => {
   // targets div chore-list, which is in index.html
   $('#chore-list').empty()
   store.user = null
-  $('#chore-crud').addClass('hidden')
+  $('#show-crud').addClass('hidden')
   // this restores the show chore button so it shows when the next user logs in.
   //   $('#show-chore-button').hide() is used in chores/ui.js
   // in the showChoreSuccess function. It hides the button so users
@@ -76,10 +76,10 @@ const signOutSuccess = () => {
 
   // Update: have moved the chore-crud div down so that it does not enclose the
   // show chore feature. Temporarily shows. Can fix later.
-  $('#show-chore-button').show()
-  $('#show-chores-wrapper').addClass('hidden')
+  // $('#show-chore-button').show()
+  $('#show-listing-wrapper').addClass('hidden')
   $('#sign-out-wrapper').addClass('hidden')
-  $('#sign-up-wrapper').removeClass('hidden')
+  $('#regContainer').removeClass('hidden')
   $('#sign-in-wrapper').removeClass('hidden')
   $('#usermessages').text('You are signed out. Thanks for visiting! Text your mama :)')
 }
