@@ -39,10 +39,10 @@ const onAddUserFailure = (response) => {
 const onSignInSuccess = (response) => {
   store.user = response.user
   resetForm($('#sign-in'))
-  $('#chore-crud').removeClass('hidden')
-  $('#show-chores-wrapper').removeClass('hidden')
+  $('#show-crud').removeClass('hidden')
+  $('#show-listing-wrapper').removeClass('hidden')
   $('#sign-out-wrapper').removeClass('hidden')
-  $('#sign-up-wrapper').addClass('hidden')
+  $('#regContainer').addClass('hidden')
   $('#sign-in-wrapper').addClass('hidden')
   $('#usermessages').text('You are signed in. Get ready to have organized chores!')
 }
