@@ -8,6 +8,7 @@ const getFormFields = require('../../../lib/get-form-fields.js')
 const onSignUp = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
+  console.log('You have arrived at onSignUp in auth/events.js')
   api.post(data)
     .then(ui.onAddUserSuccess)
     .catch(ui.onAddUserFailure)
