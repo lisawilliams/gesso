@@ -23,8 +23,10 @@ const onSignIn = function (event) {
 }
 
 const onSignOut = function (event) {
+  console.log('This is immediately before api.signOut() in auth/events.js')
   event.preventDefault()
   const data = getFormFields(event.target)
+  console.log('This is immediately before api.signOut() in auth/events.js')
   api.signOut(onSignIn.data)
   .then(ui.signOutSuccess)
   .catch(ui.signOutFailure)

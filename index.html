@@ -1,36 +1,92 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>Gesso</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `link` tags unless you know what you are doing -->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<head>
+  <title>Gesso</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `script` tags unless you know what you are doing -->
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
-    <body class="container-fluid">
+  <!-- Do not add `link` tags unless you know what you are doing -->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
-    <div class = "container">
-      <div class="jumbotron">
-       <h1>Gesso</h1>
-       <div class ="well">
-      <div id ="usermessages">
-   </div>
-       </div>
-     </div>
-   </div>
-   <!-- <div class ="well">
-     <div id ="usermessages">
-   </div> -->
- </div>
+  <!-- Do not add `script` tags unless you know what you are doing -->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
 
-<!-- Beginning of modal login experiment -->
-<div id="fullscreen_bg" class="fullscreen_bg"/>
-<div id="regContainer" class="container">
-      <div class="row">
+<body class="container-fluid">
+
+  <!-- Fullscreen background for login view -->
+  <div id="fullscreen_bg" class="fullscreen_bg" />
+
+
+  <!-- Beginning of navbar  -->
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-2">
+               <span class="sr-only">Toggle navigation</span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+             </button>
+        <a class="navbar-brand" href="#">Gesso</a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="navbar-collapse-2">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#">Add Event Listing</a></li>
+          <li>
+            <a class="btn btn-default btn-outline btn-circle" data-toggle="collapse" href="#nav-collapse2" aria-expanded="false" aria-controls="nav-collapse2">Change Password</a>
+          </li>
+          <li>
+            <a class="btn btn-default btn-outline btn-circle" data-toggle="collapse" href="#nav-collapse2" aria-expanded="false" aria-controls="nav-collapse3">Sign out</a>
+          </li>
+
+        </ul>
+        <div class="collapse nav navbar-nav nav-collapse" id="nav-collapse2">
+          <form class="navbar-form navbar-right form-inline" role="form">
+            <!-- Change password form fields  need to be changed to meet API and event-handler requirements -->
+            <div class="form-group">
+              <label class="sr-only" for="Email">Password</label>
+              <input type="email" class="form-control" id="Email" placeholder="Password" autofocus required />
+            </div>
+            <div class="form-group">
+              <label class="sr-only" for="Password">Password Confirmation</label>
+              <input type="password" class="form-control" id="Password" placeholder="Password Confirm" required />
+            </div>
+            <button type="submit" class="btn btn-success">Change Password</button>
+          </form>
+        </div>
+
+
+        <!-- <div class="collapse nav navbar-nav nav-collapse" id="nav-collapse3"> -->
+          <!-- <form class="navbar-form navbar-right form-inline" role="form" id="sign-out"> -->
+              <form id="sign-out">
+             <!-- Change password form fields  need to be changed to meet API and event-handler requirements -->
+            <input type="submit" name="submit" class="btn btn-success">Sign out</input>
+          </form>
+          <!-- <form id="sign-out">
+            <input type="submit" name="submit" value="Sign Out">
+          </form> -->
+
+        </div>
+
+      </div>
+      <!-- /.navbar-collapse -->
+    <!-- </div> -->
+    <!-- /.container -->
+  </nav>
+  <!-- /.navbar -->
+
+  <!-- End of navbar -->
+
+
+  <!-- Beginning of modal login experiment -->
+
+  <div id="regContainer" class="container">
+    <div class="row">
       <div class="col-md-6 col-md-offset-3">
         <div class="panel panel-login">
           <div class="panel-heading">
@@ -98,201 +154,175 @@
     </div>
   </div>
 
-<!-- End of modal login experiment -->
+
+  <!-- End of modal login experiment -->
 
 
-   <div class="container">
-   <!-- <div class="row">
-     <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-       <div id="sign-up-wrapper">
-       <div class="thumbnail">
-         <div class="caption">
-           <div class="sign-up-box">
-           <form id="sign-up">
-               <fieldset>
-                 <h2>Sign up</h2>
-                 <input type="text" name="credentials[email]" value="" placeholder="email">
-                 <input type="password" name="credentials[password]" value="" placeholder="password">
-                 <input type="password" name="credentials[password_confirmation]" value="" placeholder ="password confirmation">
-                 <input type="submit" name="submit" value="Sign up">
-               </fieldset>
-           </form>
-         </div>
-         </div>
-         </div>
-     </div>
+
+<!-- Div for user messages. To be placed when we make final layout. -->
+  <!-- <div class ="well">
+      <div id ="usermessages">
    </div>
-
-     <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-       <div id="sign-in-wrapper">
-       <div class="thumbnail">
-         <div class="caption">
-           <div class="sign-in-box">
-           <form id="sign-in">
-               <fieldset>
-                   <h2>Sign in</h2>
-                   <input type="text" name="credentials[email]" value="" placeholder="email">
-                   <input type="password" name="credentials[password]" value="" placeholder="password">
-                   <input type="submit" name="submit" value="Sign in">
-                 </fieldset>
-           </form>
-</div>
-         </div>
-       </div>
-     </div>
-     </div> -->
-
-     <div id ="sign-out-wrapper" class="hidden">
-     <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-       <div class="thumbnail">
-
-         <div class="caption">
-           <div class="sign-out-box">
-           <h2>Sign out</h2>
-           <form id="sign-out">
-                   <input type="submit" name="submit" value="Sign Out">
-           </form>
-         </div>
-         </div>
-       </div>
-     </div>
-   </div>
-   </div>
+       </div> -->
 
 
 
-<div class="container">
-  <div class="row article">
-  <div class="col-lg-12 col-md-12 col-sm-12col-xs-12">
-    <div id="show-listing-wrapper" class="hidden">
-<div class="show-all-chores-box">
-      <h2>Show all chores</h2>
-        <form id="show-chore">
-          <fieldset>
-          <div id="show-chore-button">
-            <input type ="submit" name="submit" value="Show all chores">
+
+  <!-- <div class="container">
+
+    <div id="sign-out-wrapper" class="hidden">
+      <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+        <div class="thumbnail">
+
+          <div class="caption">
+            <div class="sign-out-box">
+              <h2>Sign out</h2>
+              <form id="sign-out">
+                <input type="submit" name="submit" value="Sign Out">
+              </form>
+            </div>
           </div>
-          </fieldset>
-        </form>
+        </div>
       </div>
     </div>
+  </div> -->
+
+
+
+  <div class="container">
+    <div class="row article">
+      <div class="col-lg-12 col-md-12 col-sm-12col-xs-12">
+        <div id="show-listing-wrapper" class="hidden">
+          <div class="show-all-chores-box">
+            <h2>Show all chores</h2>
+            <form id="show-chore">
+              <fieldset>
+                <div id="show-chore-button">
+                  <input type="submit" name="submit" value="Show all chores">
+                </div>
+              </fieldset>
+            </form>
+          </div>
+        </div>
         <br><br><br>
 
-<!-- Using AJAX to return list of chores in the 'list' div -->
-<!-- This returns the list of chores. chore-list.handlebars targets the "chore-list" div. -->
- <div id ="chore-container">
-   <div id="chore-list">
-   </div>
-</div>
+        <!-- Using AJAX to return list of chores in the 'list' div -->
+        <!-- This returns the list of chores. chore-list.handlebars targets the "chore-list" div. -->
+        <div id="chore-container">
+          <div id="chore-list">
+          </div>
+        </div>
 
-         </div>
-       </div>
-     </div>
-
-<div id ="show-crud" class ="hidden">
-     <div class="container">
-     <div class="row">
-       <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-         <div class="thumbnail">
-           <div class="caption">
-             <div class="create-chore-box">
-           <h2> Create a chore</h2>
-           <form id="create-chore">
-             <fieldset>
-          <input type="text" name="chore[chore_name]" id="chore_name" placeholder="Chore name"><br>
-          <textarea cols="25" rows="7" name="chore[directions]" id="directions" placeholder="Write directions here"></textarea><br>
-          <input type="text" name="chore[day_of_week]" id="day_of_week" placeholder="Day of week"><br>
-          <!-- <input type="text" name="chore[user_id]" id="user_id" placeholder="User ID"><br> -->
-          <input type ="submit" name="submit" value="Create chore">
-        </fieldset>
-      </form>
-    </div>
-
+      </div>
     </div>
   </div>
-</div>
 
-<br><br>
+  <div id="show-crud" class="hidden">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+          <div class="thumbnail">
+            <div class="caption">
+              <div class="create-chore-box">
+                <h2>Add New Listing</h2>
+                <form id="create-show">
+                  <fieldset>
+                    <input type="text" name="show[show_name]" id="show_name" placeholder="Show name"><br>
+                    <input type ="text" name="show[show_date]" id="show_date" placeholder="Date"><br>
+                    <input type ="text" name="show[show_time]" id="show_time" placeholder="Time"><br>
+                    <textarea cols="25" rows="7" name="show[notes]" id="notes" placeholder="Notes on Show"></textarea><br>
+                    <input type="submit" name="submit" value="Create show reminder">
+                  </fieldset>
+                </form>
+              </div>
 
-
-<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-  <div class="thumbnail">
-    <div class="caption">
-      <div class="delete-chore-box">
-  <h2>Delete a Chore</h2>
-  <form id="delete-chore">
-    <fieldset>
-    <input type="text" name="chore[id]" id="id" placeholder="Chore ID"><br>
-      <input type="submit" value="Delete chore">
-    </fieldset>
-  </form>
-</div>
-</div>
-</div>
-</div>
-
-<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-  <div class="thumbnail">
-    <div class="caption">
-      <div class="update-chore-box">
-  <h2> Update a chore</h2>
-  <form id="update-chore">
-    <fieldset>
- <input type="text" name="chore[id]" id="id" placeholder="Chore ID"><br>
- <input type="text" name="chore[chore_name]" id="chore_name" placeholder="Chore name"><br>
- <textarea cols="25" rows="7" name="chore[directions]" id="directions" placeholder="Write directions here"></textarea><br>
- <input type="text" name="chore[day_of_week]" id="day_of_week" placeholder="Day of week"><br>
-<!-- <input type="text" name="chore[user_id]" id="user_id" placeholder="User ID"><br> -->
- <input type ="submit" name="submit" value="Update chore">
-</fieldset>
-</form>
-</div>
-
-</div>
-</div>
-</div>
-</div>
-
-
-      <BR><BR><BR><BR>
-
-
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-          <!-- <div class="thumbnail"> -->
-            <!-- <div class="caption"> -->
-              <div class="well">
-
-        <h2>Change Password</h2>
-  <form id="change-password">
-   <fieldset>
-     <input type="password" name="passwords[old]" id="change-password-old" placeholder="Old Password">
-     <input type="password" name="passwords[new]" id="change-password-new" placeholder="New Password">
-     <input type="submit" name="submit" value="Change Password!">
-   </fieldset>
- </form>
-</div>
-</div>
-</div>
-</div>
-
-<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-  <!-- <div class="thumbnail"> -->
-    <!-- <div class="caption"> -->
-      <div class="well">
-
-<h4>About</h4>
-Made with &#127752; by Lisa Williams.</br>
-Gesso front-end code <a href ="https://github.com/lisawilliams/gesso/">here</a>.<br>
-Gesso API <a href ="https://github.com/lisawilliams/gesso/">here</a>.
-</div>
-</div>
-
-
-
-
+            </div>
           </div>
+        </div>
+
+        <br><br>
+
+
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+          <div class="thumbnail">
+            <div class="caption">
+              <div class="delete-chore-box">
+                <h2>Delete a Chore</h2>
+                <form id="delete-chore">
+                  <fieldset>
+                    <input type="text" name="chore[id]" id="id" placeholder="Chore ID"><br>
+                    <input type="submit" value="Delete chore">
+                  </fieldset>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+          <div class="thumbnail">
+            <div class="caption">
+              <div class="update-show-box">
+                <h2>Update a chore</h2>
+                <form id="update-chore">
+                  <fieldset>
+                    <input type="text" name="chore[id]" id="id" placeholder="Chore ID"><br>
+                    <input type="text" name="chore[chore_name]" id="chore_name" placeholder="Chore name"><br>
+                    <textarea cols="25" rows="7" name="chore[directions]" id="directions" placeholder="Write directions here"></textarea><br>
+                    <input type="text" name="chore[day_of_week]" id="day_of_week" placeholder="Day of week"><br>
+                    <!-- <input type="text" name="chore[user_id]" id="user_id" placeholder="User ID"><br> -->
+                    <input type="submit" name="submit" value="Update chore">
+                  </fieldset>
+                </form>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+
+
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <!-- <div class="thumbnail"> -->
+        <!-- <div class="caption"> -->
+        <div class="well">
+
+          <h2>Change Password</h2>
+          <form id="change-password">
+            <fieldset>
+              <input type="password" name="passwords[old]" id="change-password-old" placeholder="Old Password">
+              <input type="password" name="passwords[new]" id="change-password-new" placeholder="New Password">
+              <input type="submit" name="submit" value="Change Password!">
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <!-- <div class="thumbnail"> -->
+    <!-- <div class="caption"> -->
+    <div class="well">
+
+      <h4>About</h4> Made with &#127752; by Lisa Williams.</br>
+      Gesso front-end code <a href="https://github.com/lisawilliams/gesso/">here</a>.<br> Gesso API <a href="https://github.com/lisawilliams/gesso/">here</a>.
+    </div>
+  </div>
 
 
 
-    </body>
+
+  </div>
+
+
+
+</body>
+
 </html>
