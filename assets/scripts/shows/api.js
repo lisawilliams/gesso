@@ -37,15 +37,15 @@ const showAllChores = function () {
 
 // API PATCH, updates a chore
 
-const updateChore = function (choreObject, choreNumber) {
+const updateShow = function (showObject, showNumber) {
   // debugger
   return $.ajax({
-    url: config.apiOrigin + '/chores/' + choreNumber,
+    url: config.apiOrigin + '/shows/' + showNumber,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token
     },
-    data: choreObject
+    data: showObject
   })
 }
 
@@ -65,6 +65,6 @@ const deleteShow = (id) => {
 module.exports = {
   createShow,
   showAllChores,
-  updateChore,
+  updateShow,
   deleteShow
 }
