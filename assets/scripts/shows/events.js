@@ -50,13 +50,14 @@ const onUpdateChore = function (event) {
 
 // Delete a chore
 
-const onDeleteChore = function (event) {
+const onDeleteShow = function (event) {
   event.preventDefault()
   const id = getFormFields(event.target)
+  console.log('This is id from onDeleteShow: ', id)
   // debugger;
-  api.deleteChore(id.chore.id)
-  .then(ui.deleteChoreSuccess)
-  .catch(ui.deleteChoreFailure)
+  api.deleteShow(id.show.id)
+  .then(ui.deleteShowSuccess)
+  .catch(ui.deleteShowFailure)
 }
 
 // REMEMBER TO PUT IN # before form ID!
@@ -65,7 +66,7 @@ const addHandlers = () => {
   // $('#chore-crud').on((document).ready, onStartState)
   $('#create-show').on('submit', onCreateShow)
   $('#show-chore').on('submit', onShowAllChores)
-  $('#delete-chore').on('submit', onDeleteChore)
+  $('#delete-show').on('submit', onDeleteShow)
   $('#update-chore').on('submit', onUpdateChore)
 }
 
@@ -74,5 +75,5 @@ module.exports = {
   onCreateShow,
   onShowAllChores,
   onUpdateChore,
-  onDeleteChore
+  onDeleteShow
 }

@@ -51,9 +51,9 @@ const updateChore = function (choreObject, choreNumber) {
 
 // API DELETE, deletes a selected chore
 
-const deleteChore = (id) => {
+const deleteShow = (id) => {
   return $.ajax({
-    url: config.apiOrigin + '/chores/' + id,
+    url: config.apiOrigin + '/shows/' + id,
     // url: config.apiOrigins.development + '/chores/' + id,
     method: 'DELETE',
     headers: {
@@ -66,5 +66,5 @@ module.exports = {
   createShow,
   showAllChores,
   updateChore,
-  deleteChore
+  deleteShow
 }

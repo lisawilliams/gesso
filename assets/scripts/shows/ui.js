@@ -86,14 +86,14 @@ const updateChoreFailure = (response) => {
 
 // Chore Delete
 
-const deleteChoreSuccess = (response) => {
-  resetForm($('#delete-chore'))
+const deleteShowSuccess = (response) => {
+  resetForm($('#delete-show'))
   $('#usermessages').text('You have deleted a chore!')
   $('#chore-list').empty()
   $('#show-chore-button').show()
 }
 
-const deleteChoreFailure = (response) => {
+const deleteShowFailure = (response) => {
   $('#usermessages').text('Deleting a chore failed. Try again.')
 }
 
@@ -109,6 +109,6 @@ module.exports = {
   noChoresYet,
   updateChoreSuccess,
   updateChoreFailure,
-  deleteChoreSuccess,
-  deleteChoreFailure
+  deleteShowSuccess,
+  deleteShowFailure
 }
