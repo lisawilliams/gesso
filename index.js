@@ -24,7 +24,7 @@ const events = require('./assets/scripts/auth/events.js')
 // scripts
 require('./assets/scripts/index.js')
 require('./assets/scripts/auth/events.js')
-// require('./assets/scripts/chores/events.js')
+require('./assets/scripts/shows/events.js')
 
 // styles
 require('./assets/styles/index.scss')
