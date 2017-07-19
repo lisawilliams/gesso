@@ -11,14 +11,16 @@ const onStartState = function (event) {
   ui.startState
 }
 
-// Chore events
+// Show events
 
-const onCreateChore = function (event) {
+const onCreateShow = function (event) {
   event.preventDefault()
+  console.log('you have reached onCreateShow')
   const data = getFormFields(event.target)
-  api.createChore(data)
-    .then(ui.createChoreSuccess)
-    .catch(ui.createChoreFailure)
+  console.log('this is data from onCreateShow', data)
+  api.createShow(data)
+    .then(ui.createShowSuccess)
+    .catch(ui.createShowFailure)
 }
 
 // Show all of a user's chores
@@ -61,7 +63,7 @@ const onDeleteChore = function (event) {
 
 const addHandlers = () => {
   // $('#chore-crud').on((document).ready, onStartState)
-  $('#create-chore').on('submit', onCreateChore)
+  $('#create-show').on('submit', onCreateShow)
   $('#show-chore').on('submit', onShowAllChores)
   $('#delete-chore').on('submit', onDeleteChore)
   $('#update-chore').on('submit', onUpdateChore)
@@ -69,7 +71,7 @@ const addHandlers = () => {
 
 module.exports = {
   addHandlers,
-  onCreateChore,
+  onCreateShow,
   onShowAllChores,
   onUpdateChore,
   onDeleteChore

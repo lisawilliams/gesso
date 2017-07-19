@@ -25,8 +25,8 @@ const failure = (error) => {
 
 // Chore create
 
-const createChoreSuccess = (response) => {
-  resetForm($('#create-chore'))
+const createShowSuccess = (response) => {
+  resetForm($('#create-show'))
   $('#usermessages').text('You have added a chore!')
   $('#chore-list').empty()
   $('#show-chore-button').show()
@@ -34,6 +34,7 @@ const createChoreSuccess = (response) => {
 
 const createChoreFailure = (response) => {
   $('#usermessages').text('Adding a chore failed. Try again.')
+  console.log('This is response from shows/ui.js', response)
 }
 
 // Chore show
@@ -100,7 +101,7 @@ module.exports = {
   resetForm,
   failure,
   success,
-  createChoreSuccess,
+  createShowSuccess,
   createChoreFailure,
   validateChoreShow,
   showChoreSuccess,

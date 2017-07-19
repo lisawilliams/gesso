@@ -5,9 +5,9 @@ const store = require('./../store')
 
 // API POST, posts a new chore to the db based on user form input
 
-const createChore = (data) => {
+const createShow = (data) => {
   return $.ajax({
-    url: config.apiOrigin + '/chores/',
+    url: config.apiOrigin + '/shows/',
     method: 'POST',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -15,7 +15,7 @@ const createChore = (data) => {
     data
   })
   .then((response) => {
-    store.chore = response.chore
+    store.show = response.show
   })
 }
 
@@ -63,7 +63,7 @@ const deleteChore = (id) => {
 }
 
 module.exports = {
-  createChore,
+  createShow,
   showAllChores,
   updateChore,
   deleteChore
