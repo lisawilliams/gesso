@@ -37,15 +37,16 @@ const onShowAllChores = function (event) {
 
 // Update a chore
 
-const onUpdateChore = function (event) {
+const onUpdateShow = function (event) {
   event.preventDefault()
   let data = {}
-  data.chores = getFormFields(event.target)
-  let choreNumber = (data.chores.chore.id)
-  let choreObject = (data.chores)
-  api.updateChore(choreObject, choreNumber)
-  .then(ui.updateChoreSuccess)
-.catch(ui.updateChoreFailure)
+  data.shows = getFormFields(event.target)
+  let showNumber = (data.shows.show.id)
+  let showObject = (data.shows)
+  console.log('This is data.shows: ', data.shows)
+  api.updateShow(showObject, showNumber)
+  .then(ui.updateShowSuccess)
+.catch(ui.updateShowFailure)
 }
 
 // Delete a chore
@@ -67,13 +68,13 @@ const addHandlers = () => {
   $('#create-show').on('submit', onCreateShow)
   $('#show-chore').on('submit', onShowAllChores)
   $('#delete-show').on('submit', onDeleteShow)
-  $('#update-chore').on('submit', onUpdateChore)
+  $('#update-show').on('submit', onUpdateShow)
 }
 
 module.exports = {
   addHandlers,
   onCreateShow,
   onShowAllChores,
-  onUpdateChore,
+  onUpdateShow,
   onDeleteShow
 }
