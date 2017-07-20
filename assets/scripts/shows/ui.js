@@ -21,9 +21,9 @@ const success = (data) => {
 const failure = (error) => {
 }
 
-// Chore functions
+// Show functions
 
-// Chore create
+// Show create
 
 const createShowSuccess = (response) => {
   resetForm($('#create-show'))
@@ -32,30 +32,30 @@ const createShowSuccess = (response) => {
   $('#show-chore-button').show()
 }
 
-const createChoreFailure = (response) => {
+const createShowFailure = (response) => {
   $('#usermessages').text('Adding a chore failed. Try again.')
   console.log('This is response from shows/ui.js', response)
 }
 
-// Chore show
+// Show a user's shows
 
-const validateChoreShow = (response) => {
-  if (response.chores[0].id > 0) {
-    showChoreSuccess(response)
+const validateShowShow = (response) => {
+  if (response.shows[0].id > 0) {
+    showShowsSuccess(response)
   } else {
-    noShowChoreTwice(response)
+    noShowShowsTwice(response)
   }
 }
 
-const showChoreSuccess = (response) => {
+const showShowsSuccess = (response) => {
   // store.chores returns an empty array -- [] -- if there are no chores
   // linter expects === but code fails if it is not ==
-  if (store.chores == '') {
+  if (store.shows == '') {
     $('#usermessages').text('You don\'t have any chores yet. How about adding some using Create A Chore below?')
   } else {
-    $('#chore-list').show()
-    const showChoreList = showChoresTemplate({ chores: store.chores })
-    $('#chore-list').append(showChoreList)
+    $('#show-list').show()
+    const showShowList = showShowsTemplate({ showAllChores: store.shows })
+    $('#show-list').append(showShowList)
     $('#usermessages').text('Look at those chores! But do not worry, you got this.')
     $('#show-chore-button').hide()
   }
@@ -102,9 +102,9 @@ module.exports = {
   failure,
   success,
   createShowSuccess,
-  createChoreFailure,
-  validateChoreShow,
-  showChoreSuccess,
+  createShowFailure,
+  validateShowShow,
+  showShowsSuccess,
   showChoreFailure,
   noChoresYet,
   updateShowSuccess,
