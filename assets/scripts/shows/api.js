@@ -64,7 +64,7 @@ const deleteShow = (id) => {
 
 module.exports = {
   createShow,
-  showAllChores,
+  showAllShows,
   updateShow,
   deleteShow
 }
