@@ -38,6 +38,8 @@ const onAddUserFailure = (response) => {
 
 const onSignInSuccess = (response) => {
   store.user = response.user
+  console.log('This is store.user: ', store.user)
+  console.log('This is response.user: ', response.user)
   resetForm($('#sign-in'))
   $('#show-crud').removeClass('hidden')
   $('#show-listing-wrapper').removeClass('hidden')
