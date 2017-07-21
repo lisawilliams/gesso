@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Gesso</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Do not add `link` tags unless you know what you are doing -->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Do not add `script` tags unless you know what you are doing -->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body class="container-fluid">
+
+  <!-- Fullscreen background for login view -->
+  <div id="fullscreen_bg" class="fullscreen_bg" />
+
+
+  <!-- Beginning of navbar  -->
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-2">
+               <span class="sr-only">Toggle navigation</span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+             </button>
+        <a class="navbar-brand" href="#">Gesso</a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="navbar-collapse-2">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#">Add Event Listing</a></li>
+          <li>
+            <a class="btn btn-default btn-outline btn-circle" data-toggle="collapse" href="#nav-collapse2" aria-expanded="false" aria-controls="nav-collapse2">Change Password</a>
+          </li>
+          <li>
+            <form id="sign-out">
+              <!-- Change password form fields  need to be changed to meet API and event-handler requirements -->
+              <input type="submit" name="submit" class="btn btn-success" value="Sign Out"></input>
+            </form>
+            <!-- <a class="btn btn-default btn-outline btn-circle" data-toggle="collapse" href="#nav-collapse2" aria-expanded="false" aria-controls="nav-collapse3">Sign out</a> -->
+          </li>
+
+        </ul>
+        <div class="collapse nav navbar-nav nav-collapse" id="nav-collapse2">
+          <form class="navbar-form navbar-right form-inline" role="form">
+            <!-- Change password form fields  need to be changed to meet API and event-handler requirements -->
+            <div class="form-group">
+              <label class="sr-only" for="Email">Password</label>
+              <input type="email" class="form-control" id="Email" placeholder="Password" autofocus required />
+            </div>
+            <div class="form-group">
+              <label class="sr-only" for="Password">Password Confirmation</label>
+              <input type="password" class="form-control" id="Password" placeholder="Password Confirm" required />
+            </div>
+            <button type="submit" class="btn btn-success">Change Password</button>
+          </form>
+        </div>
+
+
+
+
+      </div>
+
+    </div>
+    <!-- /.navbar-collapse -->
+    <!-- </div> -->
+    <!-- /.container -->
+  </nav>
+  <!-- /.navbar -->
+
+  <!-- End of navbar -->
+
+
+  <!-- Beginning of modal login experiment -->
+
+  <div id="regContainer" class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <div class="panel panel-login">
+          <div class="panel-heading">
+            <div class="row">
+              <div class="col-xs-6">
+                <a href="#" class="active" id="login-form-link">Login</a>
+              </div>
+              <div class="col-xs-6">
+                <a href="#" id="register-form-link">Register</a>
+              </div>
+            </div>
+            <hr>
+          </div>
+          <div class="panel-body">
+            <div class="row">
+              <div class="col-lg-12">
+                <!-- Note below is the #sign-up that corresponds to the event handler in auth/events.js -->
+                <form id="sign-in" action="#" method="post" role="form" style="display: block;">
+                  <div class="form-group">
+                    <label for="username">Email</label>
+                    <input type="text" name="credentials[email]" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
+                  </div>
+                  <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" name="credentials[password]" id="password" tabindex="2" class="form-control" placeholder="Password">
+                  </div>
+                  <div class="form-group text-center">
+                    <input type="checkbox" tabindex="3" class="" name="remember" id="remember">
+                    <label for="remember"> Remember Me</label>
+                  </div>
+                  <div class="form-group">
+                    <div class="row">
+                      <div class="col-sm-6 col-sm-offset-3">
+                        <input type="submit" name="submit" id="login-submit" tabindex="4" class="form-control btn btn-login" value="Log In">
+                      </div>
+                    </div>
+                  </div>
+                </form>
+                <form id="sign-up" action="#" method="post" role="form" style="display: none;">
+                  <div class="form-group">
+                    <label for="Email">Email</label>
+                    <input type="text" name="credentials[email]" id="email" tabindex="1" class="form-control" placeholder="Email" value="">
+                  </div>
+                  <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" name="credentials[password]" id="password" tabindex="2" class="form-control" placeholder="Password">
+                  </div>
+                  <div class="form-group">
+                    <label for="confirm-password">Confirm password</label>
+                    <input type="password" name="credentials[password_confirmation]" id="confirm-password" tabindex="2" class="form-control" placeholder="Confirm Password">
+                  </div>
+                  <div class="form-group">
+                    <div class="row">
+                      <div class="col-sm-6 col-sm-offset-3">
+                        <input type="submit" name="submit" id="register-submit" tabindex="4" class="form-control btn btn-register" value="Register Now">
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- End of modal login experiment -->
+
+
+
+  <!-- Div for user messages. To be placed when we make final layout. -->
+  <!-- <div class ="well">
+      <div id ="usermessages">
+   </div>
+       </div> -->
+
+
+
+
+  <!-- <div class="container">
+
+    <div id="sign-out-wrapper" class="hidden">
+      <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+        <div class="thumbnail">
+
+          <div class="caption">
+            <div class="sign-out-box">
+              <h2>Sign out</h2>
+              <form id="sign-out">
+                <input type="submit" name="submit" value="Sign Out">
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+
+
+  <div class="container">
+    <div class="row article">
+      <div class="col-lg-12 col-md-12 col-sm-12col-xs-12">
+        <div id="show-listing-wrapper" class="hidden">
+          <div class="show-all-chores-box">
+            <h2>Show all art shows</h2>
+            <!-- 'show-user-shows' triggers onShowAllShows in /shows/events.js. That function triggers a GET request that pulls a user's shows (I hope!) and also links the data from the GET request to the handlebars file that displays them on the page (that part is in /shows/ui.js.) -->
+            <form id="show-user-shows">
+              <fieldset>
+                <div id="show-chore-button">
+                  <input type="submit" name="submit" value="Show all shows">
+                </div>
+              </fieldset>
+            </form>
+          </div>
+        </div>
+        <br><br><br>
+        <div id="show-container">
+          <div id="show-list">
+            <H1>Hello</H1>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div id="show-crud" class="hidden">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+          <div class="thumbnail">
+            <div class="caption">
+              <div class="create-chore-box">
+                <h2>Add New Listing</h2>
+                <form id="create-show">
+                  <fieldset>
+                    <input type="text" name="show[show_name]" id="show_name" placeholder="Show name"><br>
+                    <input type="text" name="show[show_date]" id="show_date" placeholder="Date"><br>
+                    <input type="text" name="show[show_time]" id="show_time" placeholder="Time"><br>
+                    <textarea cols="25" rows="7" name="show[notes]" id="notes" placeholder="Notes on Show"></textarea><br>
+                    <input type="submit" name="submit" value="Create show reminder">
+                  </fieldset>
+                </form>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <br><br>
+
+
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+          <div class="thumbnail">
+            <div class="caption">
+              <div class="delete-chore-box">
+                <h2>Delete a Listing</h2>
+                <form id="delete-show">
+                  <fieldset>
+                    <input type="text" name="show[id]" id="id" placeholder="Show ID"><br>
+                    <input type="submit" value="Delete show">
+                  </fieldset>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+          <div class="thumbnail">
+            <div class="caption">
+              <div class="update-show-box">
+                <h2>Update a Listing</h2>
+                <form id="update-show">
+                  <fieldset>
+                    <input type="text" name="show[id]" id="id" placeholder="Show ID"><br>
+                    <input type="text" name="show[show_name]" id="show_name" placeholder="Show name"><br>
+                    <input type="text" name="show[show_date]" id="show_date" placeholder="Date"><br>
+                    <input type="text" name="show[show_time]" id="show_time" placeholder="Time"><br>
+                    <textarea cols="25" rows="7" name="show[notes]" id="notes" placeholder="Notes on Show"></textarea><br>
+                    <input type="submit" name="submit" value="Update show">
+                  </fieldset>
+                </form>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+
+
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <!-- <div class="thumbnail"> -->
+        <!-- <div class="caption"> -->
+        <div class="well">
+
+          <h2>Change Password</h2>
+          <form id="change-password">
+            <fieldset>
+              <input type="password" name="passwords[old]" id="change-password-old" placeholder="Old Password">
+              <input type="password" name="passwords[new]" id="change-password-new" placeholder="New Password">
+              <input type="submit" name="submit" value="Change Password!">
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <!-- <div class="thumbnail"> -->
+    <!-- <div class="caption"> -->
+    <div class="well">
+
+      <h4>About</h4> Made with &#127752; by Lisa Williams.</br>
+      Gesso front-end code <a href="https://github.com/lisawilliams/gesso/">here</a>.<br> Gesso API <a href="https://github.com/lisawilliams/gesso/">here</a>.
+    </div>
+  </div>
+
+
+
+
+  </div>
+
+
+
+</body>
+
+</html>
