@@ -13,6 +13,8 @@ const onStartState = function (event) {
 
 // Show events
 
+// Create a show
+
 const onCreateShow = function (event) {
   event.preventDefault()
   console.log('you have reached onCreateShow')
@@ -23,19 +25,19 @@ const onCreateShow = function (event) {
     .catch(ui.createShowFailure)
 }
 
-// Show all of a user's chores
+// Show all of a user's shows
 
-// Show all of a user's chores
-
-const onShowAllChores = function (event) {
+const onShowAllShows = function (event) {
   event.preventDefault()
+  console.log('You have arrived at onShowAllShows')
   const data = getFormFields(event.target)
-  api.showAllChores()
-    .then(ui.showChoreSuccess)
-    .catch(ui.showChoreFailure)
+  console.log(data)
+  api.showAllShows()
+    .then(ui.showShowsSuccess)
+    .catch(ui.showShowsFailure)
 }
 
-// Update a chore
+// Update a show
 
 const onUpdateShow = function (event) {
   event.preventDefault()
@@ -49,7 +51,7 @@ const onUpdateShow = function (event) {
 .catch(ui.updateShowFailure)
 }
 
-// Delete a chore
+// Delete a show
 
 const onDeleteShow = function (event) {
   event.preventDefault()
@@ -66,7 +68,7 @@ const onDeleteShow = function (event) {
 const addHandlers = () => {
   // $('#chore-crud').on((document).ready, onStartState)
   $('#create-show').on('submit', onCreateShow)
-  $('#show-chore').on('submit', onShowAllChores)
+  $('#show-user-shows').on('submit', onShowAllShows)
   $('#delete-show').on('submit', onDeleteShow)
   $('#update-show').on('submit', onUpdateShow)
 }
@@ -74,7 +76,7 @@ const addHandlers = () => {
 module.exports = {
   addHandlers,
   onCreateShow,
-  onShowAllChores,
+  onShowAllShows,
   onUpdateShow,
   onDeleteShow
 }

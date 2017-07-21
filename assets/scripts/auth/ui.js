@@ -56,17 +56,8 @@ const onSignInFailure = (response) => {
 // Sign out user
 
 const signOutSuccess = () => {
-  // $('#chore-container').html('')
-  // switching to .empty() here to see what happens
-  // $('#chore-container').empty()
-  // Tested the .empty. If you comment it out,
-  // the show chore button shows for the next user,
-  // and it works -- but it shows you both the current
-  // and the previous user's chores.
 
-  // now trying to empty a div that's closer to the actual chore listing
-  // targets div chore-list, which is in index.html
-  $('#chore-list').empty()
+  $('#show-list').empty()
   store.user = null
   $('#show-crud').addClass('hidden')
   // this restores the show chore button so it shows when the next user logs in.
