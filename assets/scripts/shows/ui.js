@@ -55,10 +55,10 @@ const showShowsSuccess = (response) => {
     $('#usermessages').text('You don\'t have any shows yet. How about adding some using Create A Listing below?')
   } else {
     $('#show-list').show()
-    const showShowList = ShowsTemplate({ showAllShows: store.shows })
+    const ShowList = ShowsTemplate({ shows: store.shows })
     console.log('This is store.shows at showShowsSuccess in ui.js: ', store.shows)
-    $('#show-list').append(showShowList)
-    console.log('This is showShowList: ', showShowList)
+    $('#show-list').append(ShowList)
+    console.log('This is showShowList: ', ShowList)
     console.log('This is store.shows from ui.js: ', store.shows)
     $('#usermessages').text('Look at those chores! But do not worry, you got this.')
     // $('#show-chore-button').hide()
