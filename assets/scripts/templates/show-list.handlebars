@@ -1,5 +1,5 @@
 
-{{#each chores as |chore|}}
+{{#each shows as |show|}}
 
 <div class="container">
   <!-- change back to row below -->
@@ -7,12 +7,13 @@
   <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
     <div class="thumbnail">
       <div class="caption">
-<div id='chore-listing' data-id="{{chore.id}}">
-  <!-- <p>Chore ID: {{chore.id}}</p> -->
-  <h3>{{chore.chore_name}}</h3>
+<div id='show-listing' data-id="{{show.id}}">
+  <!-- I think lines 14-16 are commented out but we'll find out -->
+  <p>Show ID: {{show.id}}</p>
+  <!-- <h3>{{chore.chore_name}}</h3>
   <p>Chore ID: {{chore.id}}</p>
   <p>Directions: {{chore.directions}}</p>
-  <p>Day of Week: {{chore.day_of_week}}</p>
+  <p>Day of Week: {{chore.day_of_week}}</p> -->
 </div>
 </div>
 </div>
