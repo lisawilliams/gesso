@@ -31,6 +31,7 @@ const showAllShows = function () {
   })
   .then((response) => {
     store.shows = response.shows
+    console.log('This is response from showAllShows in api.js: ', response)
     return store
   })
 }

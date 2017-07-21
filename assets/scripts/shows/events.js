@@ -29,6 +29,7 @@ const onCreateShow = function (event) {
 
 const onShowAllShows = function (event) {
   event.preventDefault()
+  console.log('You have arrived at onShowAllShows')
   const data = getFormFields(event.target)
   console.log(data)
   api.showAllShows()
@@ -67,7 +68,7 @@ const onDeleteShow = function (event) {
 const addHandlers = () => {
   // $('#chore-crud').on((document).ready, onStartState)
   $('#create-show').on('submit', onCreateShow)
-  $('#show-shows').on('submit', onShowAllShows)
+  $('#show-user-shows').on('submit', onShowAllShows)
   $('#delete-show').on('submit', onDeleteShow)
   $('#update-show').on('submit', onUpdateShow)
 }
