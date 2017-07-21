@@ -63,11 +63,11 @@ for when a user record was created and updated.
 ### Entity Relationship Diagram
 
 Users ----|----< Shows
-Galleries ---|--- Shows
+Shows ----|----< Artists
 
-A user has many shows; galleries also have many shows.
+A user has many shows; shows have many artists.
 
-For additional information about the database, visit the project wiki.
+For additional information about the database, visit [the project wiki](https://github.com/lisawilliams/gesso/wiki/Gesso-Documentation).
 
 ## Approach to building Gesso
 
@@ -89,39 +89,26 @@ functions working fairly easily.
 
 I then moved on to the CRUD functions. Here, the backend was not already built for us,
 so I used `rails generate` to generate resources, and ran through a procedure that I
-followed for each resource I built. Here's an example:
-
-### Chores
-
-1. Scaffold chore resource *DONE*
-2. Run bin/rails db:migrate *DONE*
-3. Test that you can add a chore via rails console *DONE*
-4. Test that you can add a chore via a curl request *DONE*
-5. Test that you can return all of a user's chores via a curl request *DONE*
-6. Test that you can update a chore via a curl request *DONE*
-7. Test that you can delete a chore via a curl request *DONE*
-
-(To see my complete project checklist, see [AutoMom Project Checklist](https://github.com/lisawilliams/auto-mom-front/blob/master/checklist.md))
+followed for each resource I built.
 
 ## Issues I Encountered
 
+This was the first application I've written with more than just user plus one resource.
+Getting the relationships right between the resources was an interesting challenge.
+Many thanks to the consultants for helping me find the right relationships.
 
 ## Gesso Documentation: Gesso Wiki
 
-I created [a wiki](MAKE LINK) documenting our API, checklists, and more. We would like to call out the following specific planning documents and documentation:
-
-## API Documentation
-
-[Link to API Documentation](MAKE LINK)
+I created [a wiki](https://github.com/lisawilliams/gesso/wiki/Gesso-Documentation) documenting our API, checklists, and more. We would like to call out the following specific planning documents and documentation:
 
 
 ## User Stories
 
-Link to user stories in project wiki
+[User Stories](https://github.com/lisawilliams/gesso/wiki/Gesso-Documentation)
 
 ## Wireframes
 
-Link to wireframes in project wiki
+[Wireframes](https://github.com/lisawilliams/gesso/wiki/Gesso-Documentation)
 
 ## Instructions for installing dependencies:
 
