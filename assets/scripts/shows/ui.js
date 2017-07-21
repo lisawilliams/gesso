@@ -1,5 +1,5 @@
 'use strict'
-const showShowsTemplate = require('../templates/chore-list.handlebars')
+const showShowsTemplate = require('../templates/show-list.handlebars')
 const store = require('./../store')
 
 // Code to reset form
@@ -61,7 +61,7 @@ const showShowsSuccess = (response) => {
     console.log('This is showShowList: ', showShowList)
     console.log('This is store.shows from ui.js: ', store.shows)
     $('#usermessages').text('Look at those chores! But do not worry, you got this.')
-    $('#show-chore-button').hide()
+    // $('#show-chore-button').hide()
   }
 }
 
