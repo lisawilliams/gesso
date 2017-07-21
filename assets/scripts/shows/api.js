@@ -21,16 +21,16 @@ const createShow = (data) => {
 
 // API GET, shows all chores for a current user
 
-const showAllChores = function () {
+const showAllShows = function () {
   return $.ajax({
-    url: config.apiOrigin + '/chores/',
+    url: config.apiOrigin + '/shows/',
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + store.user.token
     }
   })
   .then((response) => {
-    store.chores = response.chores
+    store.shows = response.shows
     return store
   })
 }
@@ -64,7 +64,7 @@ const deleteShow = (id) => {
 
 module.exports = {
   createShow,
-  showAllChores,
+  showAllShows,
   updateShow,
   deleteShow
 }
