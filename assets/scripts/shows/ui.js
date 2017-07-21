@@ -1,5 +1,5 @@
 'use strict'
-const showShowsTemplate = require('../templates/show-list.handlebars')
+const ShowsTemplate = require('../templates/show-list.handlebars')
 const store = require('./../store')
 
 // Code to reset form
@@ -52,10 +52,10 @@ const showShowsSuccess = (response) => {
   // store.chores returns an empty array -- [] -- if there are no chores
   // linter expects === but code fails if it is not ==
   if (store.shows == '') {
-    $('#usermessages').text('You don\'t have any chores yet. How about adding some using Create A Chore below?')
+    $('#usermessages').text('You don\'t have any shows yet. How about adding some using Create A Listing below?')
   } else {
     $('#show-list').show()
-    const showShowList = showShowsTemplate({ showAllShows: store.shows })
+    const showShowList = ShowsTemplate({ showAllShows: store.shows })
     console.log('This is store.shows at showShowsSuccess in ui.js: ', store.shows)
     $('#show-list').append(showShowList)
     console.log('This is showShowList: ', showShowList)
