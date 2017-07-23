@@ -1,6 +1,7 @@
 'use strict'
 const ShowsTemplate = require('../templates/show-list.handlebars')
 const store = require('./../store')
+const moment = require('moment')
 
 // Code to reset form
 // Instructions for how to call it below
@@ -59,12 +60,14 @@ const showShowsSuccess = (response) => {
     $('#show-list').show()
     const ShowList = ShowsTemplate({ shows: store.shows })
     console.log('This is store.shows at showShowsSuccess in ui.js: ', store.shows)
+    // this shows the time for a particular show (the one in the shows array with an index of 0)
+    console.log('This is store.shows[0].show_time: ', store.shows[0].show_time)
     // this is a test to begin debugging an approach to formatting the time in a show's Listing
     let date = new Date('2014-8-20')
     console.log((date.getMonth() + 1) + '/' + date.getDate() + '/' + date.getFullYear())
+    // testing moment.js library
+    console.log(moment(store.shows[0].show_time).format('MM/DD/YYYY h:mm a'))
     $('#show-list').append(ShowList)
-    console.log('This is showShowList: ', ShowList)
-    console.log('This is store.shows from ui.js: ', store.shows)
     $('#usermessages').text('Look at those chores! But do not worry, you got this.')
     // $('#show-chore-button').hide()
   }
