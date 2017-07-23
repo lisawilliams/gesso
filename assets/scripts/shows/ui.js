@@ -15,6 +15,8 @@ const resetForm = function resetForm ($form) {
 // resetForm($('#myform')); // by id, recommended
 // resetForm($('form[name=myName]')); // by name
 
+// Writing a function to format the datetime returned from the API for a show's time
+
 const success = (data) => {
 }
 
@@ -57,6 +59,9 @@ const showShowsSuccess = (response) => {
     $('#show-list').show()
     const ShowList = ShowsTemplate({ shows: store.shows })
     console.log('This is store.shows at showShowsSuccess in ui.js: ', store.shows)
+    // this is a test to begin debugging an approach to formatting the time in a show's Listing
+    let date = new Date('2014-8-20')
+    console.log((date.getMonth() + 1) + '/' + date.getDate() + '/' + date.getFullYear())
     $('#show-list').append(ShowList)
     console.log('This is showShowList: ', ShowList)
     console.log('This is store.shows from ui.js: ', store.shows)
