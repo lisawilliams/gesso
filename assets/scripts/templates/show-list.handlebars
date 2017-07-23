@@ -20,15 +20,3 @@
 </div>
 
 {{/each}}
-
-<!--
-show item schema:
-create_table "shows", force: :cascade do |t|
-  t.string   "show_name"
-  t.date     "show_date"
-  t.time     "show_time"
-  t.text     "notes"
-  t.datetime "created_at", null: false
-  t.datetime "updated_at", null: false
-  t.integer  "user_id"
-  t.index ["user_id"], name: "index_shows_on_user_id", using: :btree -->
