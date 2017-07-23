@@ -18,6 +18,7 @@ const resetForm = function resetForm ($form) {
 
 // Writing a function to format the datetime returned from the API for a show's time
 
+
 const success = (data) => {
 }
 
@@ -62,11 +63,8 @@ const showShowsSuccess = (response) => {
     console.log('This is store.shows at showShowsSuccess in ui.js: ', store.shows)
     // this shows the time for a particular show (the one in the shows array with an index of 0)
     console.log('This is store.shows[0].show_time: ', store.shows[0].show_time)
-    // this is a test to begin debugging an approach to formatting the time in a show's Listing
-    let date = new Date('2014-8-20')
-    console.log((date.getMonth() + 1) + '/' + date.getDate() + '/' + date.getFullYear())
     // testing moment.js library
-    console.log(moment(store.shows[0].show_time).format('MM/DD/YYYY h:mm a'))
+    console.log(moment(store.shows[0].show_time).format('h:mm a'))
     $('#show-list').append(ShowList)
     $('#usermessages').text('Look at those chores! But do not worry, you got this.')
     // $('#show-chore-button').hide()
