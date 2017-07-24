@@ -26,10 +26,10 @@ const failure = (error) => {
 // Show create
 
 const createShowSuccess = (response) => {
-  resetForm($('#create-show'))
-  $('#usermessages').text('You have added a chore!')
-  $('#chore-list').empty()
-  $('#show-chore-button').show()
+  // resetForm($('#create-show'))
+  // $('#usermessages').text('You have added a chore!')
+  // $('#chore-list').empty()
+  // $('#show-chore-button').show()
 }
 
 const createShowFailure = (response) => {

@@ -82,95 +82,97 @@
   <!-- Beginning of addArtwork modal experiment.  -->
 
   <div class="container">
-<!-- Trigger the modal with a button -->
-<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Add An Artwork</button>
+    <!-- Trigger the modal with a button -->
+    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Add An Artwork</button>
 
-<!-- Modal -->
-<div class="modal fade" id="myModal" role="dialog">
-<div class="modal-dialog">
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+      <div class="modal-dialog">
 
-<!-- Modal content-->
-<div class="modal-content">
-<div class="modal-header">
- <button type="button" class="close" data-dismiss="modal">&times;</button>
- <h4 class="modal-title">Add an artwork</h4>
-</div>
-<div class="modal-body" style="height: 350px;">
-
- <div class="form-group">
-    <label for="title" class="col-sm-2 control-label">Title</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" name="artwork[title]" id="title" placeholder="Artwork Title">
-    </div>
-  </div>
-
-    <div class="form-group">
-       <label for="Artist" class="col-sm-2 control-label">Artist</label>
-       <div class="col-sm-10">
-         <input type="text" class="form-control" name="artwork[artist]" id="artist" placeholder="Artist">
-       </div>
-     </div>
-
-       <div class="form-group">
-          <label for="Year Created" class="col-sm-2 control-label">Year</label>
-          <div class="col-sm-10">
-            <input type="text" class="form-control" name="artwork[yearcreated]" id="yearcreated" placeholder="Year work was finished">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Add an artwork</h4>
           </div>
-        </div>
+          <div class="modal-body" style="height: 350px;">
+            <form id="create-artwork">
+              <div class="form-group">
+                <label for="title" class="col-sm-2 control-label">Title</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" name="artwork[title]" id="title" placeholder="Artwork Title">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="Artist" class="col-sm-2 control-label">Artist</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" name="artwork[artist]" id="artist" placeholder="Artist">
+                </div>
+              </div>
 
-          <div class="form-group">
-             <label for="Artform" class="col-sm-2 control-label">Artform</label>
-             <div class="col-sm-10">
-               <input type="text" class="form-control" name="artwork[artform]" id="artform" placeholder="sculpture, drawing, painting, etc.">
-             </div>
-           </div>
+              <div class="form-group">
+                <label for="Year Created" class="col-sm-2 control-label">Year</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" name="artwork[yearcreated]" id="yearcreated" placeholder="Year work was finished">
+                </div>
+              </div>
 
-             <div class="form-group">
+              <div class="form-group">
+                <label for="Artform" class="col-sm-2 control-label">Artform</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" name="artwork[artform]" id="artform" placeholder="sculpture, drawing, painting, etc.">
+                </div>
+              </div>
+
+              <div class="form-group">
                 <label for="Materials" class="col-sm-2 control-label">Materials</label>
                 <div class="col-sm-10">
                   <input type="text" class="form-control" name="artwork[materials]" id="materials" placeholder="materials">
                 </div>
               </div>
 
-                <div class="form-group">
-                   <label for="Surface" class="col-sm-2 control-label">Surface</label>
-                   <div class="col-sm-10">
-                     <input type="text" class="form-control" name="artwork[surface]" id="surface" placeholder="Canvas, masonite, etc.">
-                   </div>
-                 </div>
+              <div class="form-group">
+                <label for="Surface" class="col-sm-2 control-label">Surface</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" name="artwork[surface]" id="surface" placeholder="Canvas, masonite, etc.">
+                </div>
+              </div>
 
-                   <div class="form-group">
-                      <label for="Dimensions" class="col-sm-2 control-label">Dimensions</label>
-                      <div class="col-sm-10">
-                        <input type="text" class="form-control" name="artwork[dimensions]" id="dimensions" placeholder="3x3 ft">
-                      </div>
-                    </div>
+              <div class="form-group">
+                <label for="Dimensions" class="col-sm-2 control-label">Dimensions</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" name="artwork[dimensions]" id="dimensions" placeholder="3x3 ft">
+                </div>
+              </div>
 
-                      <div class="form-group">
-                         <label for="Show ID" class="col-sm-2 control-label">Show ID</label>
-                         <div class="col-sm-10">
-                           <input type="text" class="form-control" name="artwork[show_id]" id="show_id" placeholder="Show ID number">
-                         </div>
-                       </div>
+              <div class="form-group">
+                <label for="Show ID" class="col-sm-2 control-label">Show ID</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" name="artwork[show_id]" id="show_id" placeholder="Show ID number">
+                </div>
+              </div>
+              <div class="form-group">
+                <input type="submit" name="submit" class="btn btn-default" value="Add Artwork">
+              </div>
+            </form>
+
+          </div>
+
+          <div class="modal-footer">
+
+            <input type="submit" name="submit" id="submit" class="btn btn-default" value="Add Artwork">
 
 
-
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
-<div class="modal-footer">
-
-        <input type="submit" name="submit" id="create-artwork" class="btn btn-default" value="Add Artwork">
-
- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
- </div>
- </div>
-</div>
-</div>
-</div>
 
 
-
-<!-- End of addArtwork modal experiment.  -->
+  <!-- End of addArtwork modal experiment.  -->
 
 
 
@@ -248,7 +250,7 @@
 
   <!-- End of modal login experiment -->
 
-<!-- Beginning of modal experiment to add artwork -->
+  <!-- Beginning of modal experiment to add artwork -->
 
   <!-- Div for user messages. To be placed when we make final layout. -->
   <!-- <div class ="well">
@@ -311,26 +313,25 @@
 
   <!-- Below is the code for the addArtwork modal.  -->
   <div id="addArtwork" class="modal fade">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal"
-              aria-hidden="true">&times;</button>
-            <h4 class="modal-title">Confirmation</h4>
-          </div>
-          <div class="modal-body">
-            <p>Do you want to close this dialog?</p>
-            <p class="text-warning">
-              <small>If you don't save, your changes will be lost.</small>
-            </p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
-          </div>
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">Confirmation</h4>
+        </div>
+        <div class="modal-body">
+          <p>Do you want to close this dialog?</p>
+          <p class="text-warning">
+            <small>If you don't save, your changes will be lost.</small>
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
         </div>
       </div>
     </div>
+  </div>
 
   <div id="show-crud" class="hidden">
     <div class="container">
