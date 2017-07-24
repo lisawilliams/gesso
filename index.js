@@ -25,6 +25,7 @@ const events = require('./assets/scripts/auth/events.js')
 require('./assets/scripts/index.js')
 require('./assets/scripts/auth/events.js')
 require('./assets/scripts/shows/events.js')
+require('./assets/scripts/artworks/events.js')
 
 // styles
 require('./assets/styles/index.scss')

@@ -15,12 +15,12 @@ const onStartState = function (event) {
 
 // Create a show
 
-const onCreateShow = function (event) {
+const onCreateArtwork = function (event) {
   event.preventDefault()
-  console.log('you have reached onCreateShow')
+  console.log('you have reached onCreateArtwork')
   const data = getFormFields(event.target)
-  console.log('this is data from onCreateShow', data)
-  api.createShow(data)
+  console.log('this is data from onCreateArtwork', data)
+  api.createArtwork(data)
     .then(ui.createShowSuccess)
     .catch(ui.createShowFailure)
 }
@@ -67,7 +67,7 @@ const onDeleteShow = function (event) {
 
 const addHandlers = () => {
   // $('#chore-crud').on((document).ready, onStartState)
-  $('#create-show').on('submit', onCreateShow)
+  $('#create-artwork').on('submit', onCreateArtwork)
   $('#show-user-shows').on('submit', onShowAllShows)
   $('#delete-show').on('submit', onDeleteShow)
   $('#update-show').on('submit', onUpdateShow)
@@ -75,7 +75,7 @@ const addHandlers = () => {
 
 module.exports = {
   addHandlers,
-  onCreateShow,
+  onCreateArtwork,
   onShowAllShows,
   onUpdateShow,
   onDeleteShow

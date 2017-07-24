@@ -15,7 +15,8 @@ const createArtwork = (data) => {
     data
   })
   .then((response) => {
-    store.show = response.show
+    store.artwork = response.artwork
+    console.log(store.artwork)
   })
 }
 
@@ -64,7 +65,7 @@ const deleteShow = (id) => {
 }
 
 module.exports = {
-  createShow,
+  createArtwork,
   showAllShows,
   updateShow,
   deleteShow
