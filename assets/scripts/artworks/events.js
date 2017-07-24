@@ -20,7 +20,7 @@ const onCreateArtwork = function (event) {
   console.log('you have reached onCreateArtwork')
   const data = getFormFields(event.target)
   console.log('this is data from onCreateArtwork', data)
-  api.createShow(data)
+  api.createArtwork(data)
     .then(ui.createShowSuccess)
     .catch(ui.createShowFailure)
 }

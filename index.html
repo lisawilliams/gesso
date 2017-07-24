@@ -81,16 +81,16 @@
 
   <!-- Beginning of addArtwork modal experiment.  -->
 
-  <div class="container">
+  <!-- <div class="container">
     <!-- Trigger the modal with a button -->
-    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Add An Artwork</button>
+  <!-- <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Add An Artwork</button> -->
 
-    <!-- Modal -->
-    <div class="modal fade" id="myModal" role="dialog">
-      <div class="modal-dialog">
+  <!-- Modal -->
+  <!-- <div class="modal fade" id="myModal" role="dialog">
+      <div class="modal-dialog"> -->
 
-        <!-- Modal content-->
-        <div class="modal-content">
+  <!-- Modal content-->
+  <!-- <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal">&times;</button>
             <h4 class="modal-title">Add an artwork</h4>
@@ -151,24 +151,25 @@
                   <input type="text" class="form-control" name="artwork[show_id]" id="show_id" placeholder="Show ID number">
                 </div>
               </div>
-              <div class="form-group">
-                <input type="submit" name="submit" class="btn btn-default" value="Add Artwork">
+              <div class="form-group"> -->
+  <!-- <input type="submit" name="submit" class="btn btn-default" value="Add Artwork"> -->
+  <!-- <input type="submit" name="submit" id="artwork-submit"  value="Add Artwork">
               </div>
             </form>
 
           </div>
 
-          <div class="modal-footer">
+          <div class="modal-footer"> -->
 
-            <input type="submit" name="submit" id="submit" class="btn btn-default" value="Add Artwork">
+  <!-- <input type="submit" name="submit" id="artwork-submit" class="btn btn-default" value="Add Artwork"> -->
+  <!-- <input type="submit" name="submit" id="login-submit" tabindex="4" class="form-control btn btn-login" value="Log In"> -->
 
-
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+  <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
           </div>
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 
 
 
@@ -250,7 +251,7 @@
 
   <!-- End of modal login experiment -->
 
-  <!-- Beginning of modal experiment to add artwork -->
+
 
   <!-- Div for user messages. To be placed when we make final layout. -->
   <!-- <div class ="well">
@@ -309,29 +310,7 @@
     </div>
   </div>
   <!-- Below is the link that triggers the Add Artwork modal.  -->
-  <li><a href="addArtwork" class="btn btn-lg btn-primary" data-toggle="modal">Add Artwork</a></li>
 
-  <!-- Below is the code for the addArtwork modal.  -->
-  <div id="addArtwork" class="modal fade">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          <h4 class="modal-title">Confirmation</h4>
-        </div>
-        <div class="modal-body">
-          <p>Do you want to close this dialog?</p>
-          <p class="text-warning">
-            <small>If you don't save, your changes will be lost.</small>
-          </p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <div id="show-crud" class="hidden">
     <div class="container">
@@ -397,47 +376,72 @@
         </div>
       </div>
 
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <div class="thumbnail">
+              <div class="caption">
+                <div class="create-chore-box">
+                  <h2>Add New Artwork</h2>
+                  <form id="create-artwork">
+                    <fieldset>
+                      <input type="text" name="artwork[title]" id="title" placeholder="Title"><br>
+                      <input type="text" name="artwork[artist]" id="artist" placeholder="Artist"><br>
+                      <input type="text" name="artwork[yearcreated]" id="yearcreated" placeholder="Year"><br>
+                      <input type="text" name="artwork[artform]" id="artform" placeholder="Artform"><br>
+                      <input type="text" name="artwork[materials]" id="materials" placeholder="Materials"><br>
+                      <input type="text" name="artwork[surface]" id="surface" placeholder="Surface"><br>
+                      <input type="text" name="artwork[dimensions]" id="dimensions" placeholder="Dimensions"><br>
+                      <input type="text" name="artwork[show_id]" id="show_id" placeholder="Show ID Number"><br>
+                      <input type="submit" name="submit" value="Add artwork">
+                    </fieldset>
+                  </form>
+                </div>
+
+              </div>
+            </div>
+          </div>
 
 
 
-      <BR>
-      <BR>
-      <BR>
-      <BR>
+          <BR>
+          <BR>
+          <BR>
+          <BR>
 
+
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <!-- <div class="thumbnail"> -->
+            <!-- <div class="caption"> -->
+            <div class="well">
+
+              <h2>Change Password</h2>
+              <form id="change-password">
+                <fieldset>
+                  <input type="password" name="passwords[old]" id="change-password-old" placeholder="Old Password">
+                  <input type="password" name="passwords[new]" id="change-password-new" placeholder="New Password">
+                  <input type="submit" name="submit" value="Change Password!">
+                </fieldset>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <!-- <div class="thumbnail"> -->
         <!-- <div class="caption"> -->
         <div class="well">
 
-          <h2>Change Password</h2>
-          <form id="change-password">
-            <fieldset>
-              <input type="password" name="passwords[old]" id="change-password-old" placeholder="Old Password">
-              <input type="password" name="passwords[new]" id="change-password-new" placeholder="New Password">
-              <input type="submit" name="submit" value="Change Password!">
-            </fieldset>
-          </form>
+          <h4>About</h4> Made with &#127752; by Lisa Williams.</br>
+          Gesso front-end code <a href="https://github.com/lisawilliams/gesso/">here</a>.<br> Gesso API <a href="https://github.com/lisawilliams/gesso/">here</a>.
         </div>
       </div>
+
+
+
+
     </div>
-  </div>
-
-  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-    <!-- <div class="thumbnail"> -->
-    <!-- <div class="caption"> -->
-    <div class="well">
-
-      <h4>About</h4> Made with &#127752; by Lisa Williams.</br>
-      Gesso front-end code <a href="https://github.com/lisawilliams/gesso/">here</a>.<br> Gesso API <a href="https://github.com/lisawilliams/gesso/">here</a>.
-    </div>
-  </div>
-
-
-
-
-  </div>
 
 
 
